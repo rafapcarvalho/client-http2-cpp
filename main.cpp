@@ -28,8 +28,8 @@ int main() {
     curl_easy_setopt(curl, CURLOPT_URL, "http://192.168.5.89:8010/oauth2/token");
     curl_easy_setopt(curl, CURLOPT_HTTP_VERSION, CURL_HTTP_VERSION_2_PRIOR_KNOWLEDGE);
     //curl_easy_setopt(curl, CURLOPT_HTTP_VERSION, CURL_HTTP_VERSION_2_0);
-    //curl_easy_setopt(curl, CURLOPT_SSLCERT, "/home/rafa/Sixbell/http2/c++/client/config/pcf.pem");
-    //curl_easy_setopt(curl, CURLOPT_SSLKEY, "/home/rafa/Sixbell/http2/c++/client/config/pcf.key");
+    curl_easy_setopt(curl, CURLOPT_SSLCERT, "/home/rafa/Sixbell/http2/c++/client/config/pcf.pem");
+    curl_easy_setopt(curl, CURLOPT_SSLKEY, "/home/rafa/Sixbell/http2/c++/client/config/pcf.key");
    // curl_easy_setopt(curl, CURLOPT_SSL_VERIFYPEER, 0L);
     curl_easy_setopt(curl, CURLOPT_CAINFO, "/home/rafa/Sixbell/http2/c++/client/config/pcf.pem");
     //curl_easy_setopt(curl, CURLOPT_MAX_RECV_SPEED_LARGE, 8178L); // Limite de velocidade de recebimento em bytes por segundo
