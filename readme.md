@@ -1,5 +1,10 @@
 # client-http2-cpp
 
+Este cliente é um teste de comunicação HTTP2.
+
+Usando o método POST contra o servidor NRF do projeto free5GC, para testar a autenticação via OAuth2.
+E posteriormente com outros métodos para testar todos as URLs do NRF.
+
 ## Cliente http2 com OAuth2
 
 Para compilar o código é necessário no mínimo c++11
