@@ -2,7 +2,8 @@
 
 Este cliente é um teste de comunicação HTTP2.
 
-Usando o método POST contra o servidor NRF do projeto free5GC, para testar a autenticação via OAuth2. E posteriormente com outros métodos para testar todos as URLs do NRF.
+Usando o método POST contra o servidor NRF do projeto free5GC, para testar a autenticação via OAuth2.
+E posteriormente com outros métodos para testar todos as URLs do NRF.
 
 ## Cliente http2 com OAuth2
 
@@ -55,3 +56,16 @@ versão:  libcurl/7.61.1 NSS/3.36 zlib/1.2.7 libssh2/1.8.0 nghttp2/1.7.1
 
 ~/Sixbell/http2/c++/client>$
 ```
+
+## Para analises de traces
+
+É necessário ter a variável de ambiente **SSLKEYLOGFILE** criada.
+
+- Linux : 
+  - export SSLKEYLOGFILE=filesslkey.log
+
+- Configurar o arquivo gerado no wireshark através do menu: 
+  - Edit ->  Preferences -> Protocols -> TLS:
+    - No parâmetro (Pre)-Master_secret log filename: Adicionar o arquivo filesslkey.log
+  - Logo basta filtrar por http2 
+
