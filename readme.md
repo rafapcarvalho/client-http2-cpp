@@ -39,7 +39,7 @@ make
 ## Execução do binário e resposta
 
 ```zsh
-~/Sixbell/http2/c++/client>$  ./client14 
+~/http2/c++/client>$  ./client14 
 -----------------------------------------------------------------------
 versão:  libcurl/7.61.1 NSS/3.36 zlib/1.2.7 libssh2/1.8.0 nghttp2/1.7.1
 -----------------------------------------------------------------------
@@ -54,7 +54,7 @@ versão:  libcurl/7.61.1 NSS/3.36 zlib/1.2.7 libssh2/1.8.0 nghttp2/1.7.1
    "token_type" : "Bearer"
 }
 
-~/Sixbell/http2/c++/client>$
+~/http2/c++/client>$
 ```
 
 ## Para analises de traces
