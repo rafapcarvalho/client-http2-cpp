@@ -68,3 +68,4 @@ versão:  libcurl/7.61.1 NSS/3.36 zlib/1.2.7 libssh2/1.8.0 nghttp2/1.7.1
   - Edit ->  Preferences -> Protocols -> TLS:
     - No parâmetro (Pre)-Master_secret log filename: Adicionar o arquivo filesslkey.log
   - Logo basta filtrar por http2 
+
