@@ -56,3 +56,15 @@ versão:  libcurl/7.61.1 NSS/3.36 zlib/1.2.7 libssh2/1.8.0 nghttp2/1.7.1
 
 ~/Sixbell/http2/c++/client>$
 ```
+
+## Para analises de traces
+
+É necessário ter a variável de ambiente **SSLKEYLOGFILE** criada.
+
+- Linux : 
+  - export SSLKEYLOGFILE=filesslkey.log
+
+- Configurar o arquivo gerado no wireshark através do menu: 
+  - Edit ->  Preferences -> Protocols -> TLS:
+    - No parâmetro (Pre)-Master_secret log filename: Adicionar o arquivo filesslkey.log
+  - Logo basta filtrar por http2 

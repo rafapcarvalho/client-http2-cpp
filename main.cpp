@@ -25,18 +25,11 @@ int main() {
     }
 
     // Configurar a solicitação HTTP/2
-    curl_easy_setopt(curl, CURLOPT_URL, "http://192.168.5.89:8010/oauth2/token");
+    curl_easy_setopt(curl, CURLOPT_URL, "https://192.168.5.89:8000/oauth2/token");
     curl_easy_setopt(curl, CURLOPT_HTTP_VERSION, CURL_HTTP_VERSION_2_PRIOR_KNOWLEDGE);
-    //curl_easy_setopt(curl, CURLOPT_HTTP_VERSION, CURL_HTTP_VERSION_2_0);
-    curl_easy_setopt(curl, CURLOPT_SSLCERT, "/home/rafa/Sixbell/http2/c++/client/config/pcf.pem");
-    curl_easy_setopt(curl, CURLOPT_SSLKEY, "/home/rafa/Sixbell/http2/c++/client/config/pcf.key");
-   // curl_easy_setopt(curl, CURLOPT_SSL_VERIFYPEER, 0L);
-    curl_easy_setopt(curl, CURLOPT_CAINFO, "/home/rafa/Sixbell/http2/c++/client/config/pcf.pem");
-    //curl_easy_setopt(curl, CURLOPT_MAX_RECV_SPEED_LARGE, 8178L); // Limite de velocidade de recebimento em bytes por segundo
-    //curl_easy_setopt(curl, CURLOPT_SSL_CIPHER_LIST, "TLSv1");
-    // Salvando o sslkey.log para verificação com wireshark
-    curl_easy_setopt(curl, CURLOPT_SSLKEY, "sslkeynrf.log");
-    //curl_easy_setopt(curl, CURLOPT_SSLKEYLOGFILE, "sslkey.log");
+    curl_easy_setopt(curl, CURLOPT_SSL_VERIFYPEER, 0L); // 1L para produção com certificados gerados por entidades certificadoras
+    curl_easy_setopt(curl, CURLOPT_SSL_VERIFYHOST, 0L);
+    curl_easy_setopt(curl, CURLOPT_CAINFO, "./config/pcf.pem");
 
     std::stringstream params;
     params  << "grant_type=authorization_code"
@@ -65,7 +58,6 @@ int main() {
 
     // Habilitando o modo verbose do curl
     curl_easy_setopt(curl, CURLOPT_VERBOSE, 1);
-
     // Habilitando visualização de informações da versão do curl
     std::cout << "-----------------------------------------------------------------------\n";
     std::cout << "versão:  " << curl_version() << "\n";
